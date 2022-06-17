@@ -17,6 +17,7 @@
   ],
   "scripts": {
     "build": "rimraf lib && tsc --build tsconfig.release.json",
+    "prepare": "yarn build",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
