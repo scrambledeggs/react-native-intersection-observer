@@ -16,6 +16,13 @@ interface IOFlatlistProps extends FlatListProps<any> {
   rootMargin?: RootMargin;
 }
 
+interface ScrollToIndexParams {
+  animated?: boolean | null | undefined;
+  index: number;
+  viewOffset?: number | undefined;
+  viewPosition?: number | undefined;
+}
+
 export declare class IOFlatListComponent extends PureComponent<IOFlatlistProps> {}
 
 export declare class IOFlatList extends IOFlatListComponent {
@@ -129,16 +136,19 @@ const withIO = (ScrollableComponent: typeof FlatList): typeof IOFlatList => {
       }
     };
 
+    public scrollToIndex = (params: ScrollToIndexParams) => {
+      this.scroller.current?.scrollToIndex(params);
+    };
+
+    public scrollToOffset = (params: {
+      offset: number;
+      animated?: boolean;
+    }) => {
+      this.scroller.current?.scrollToOffset(params);
+    };
+
     public scrollToEnd = (options?: { animated: boolean }): void => {
       this.scroller.current?.scrollToEnd(options);
-    };
-
-    public getScrollResponder = (): JSX.Element => {
-      return this.scroller.current?.getScrollResponder() as unknown as JSX.Element;
-    };
-
-    public getScrollableNode = (): any => {
-      return this.scroller.current?.getScrollableNode();
     };
 
     render() {
