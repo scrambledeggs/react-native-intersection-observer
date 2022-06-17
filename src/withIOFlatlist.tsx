@@ -30,7 +30,9 @@ export declare class IOFlatList extends IOFlatListComponent {
   scrollToOffset: FlatList['scrollToOffset'];
 }
 
-const withIO = (ScrollableComponent: typeof FlatList): typeof IOFlatList => {
+const withIOFlatList = (
+  ScrollableComponent: typeof FlatList
+): typeof IOFlatList => {
   class IOScrollableComponent extends PureComponent<IOFlatlistProps> {
     protected node: any;
 
@@ -165,7 +167,7 @@ const withIO = (ScrollableComponent: typeof FlatList): typeof IOFlatList => {
       );
     }
   }
-  return IOScrollableComponent as any;
+  return IOScrollableComponent as typeof IOFlatList;
 };
 
-export default withIO;
+export default withIOFlatList;
