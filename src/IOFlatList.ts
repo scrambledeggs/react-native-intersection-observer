@@ -1,5 +1,5 @@
 import { FlatList } from 'react-native';
 
-import withIntersectionObserver, { IOFlatList } from './withIOFlatList';
+import withIOFlatList, { IOFlatList } from './withIOFlatList';
 
-export default withIntersectionObserver(FlatList) as typeof IOFlatList;
+export default withIOFlatList(FlatList) as typeof IOFlatList;
