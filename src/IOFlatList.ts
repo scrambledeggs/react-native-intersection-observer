@@ -1,5 +1,5 @@
 import { FlatList } from 'react-native';
 
-import withIOFlatList, { IOFlatList } from './withIOFlatlist';
+import withIOList, { IOFlatList } from './withIOList';
 
-export default withIOFlatList(FlatList) as typeof IOFlatList;
+export default withIOList(FlatList) as typeof IOFlatList;
