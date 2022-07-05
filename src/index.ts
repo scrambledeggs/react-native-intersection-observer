@@ -4,7 +4,7 @@ import IOContext from './IOContext';
 import IOScrollView from './IOScrollView';
 import withIO from './withIO';
 import IOFlatList from './IOFlatList';
-import withIOFlatList from './withIOFlatList';
+import withIOFlatList from './withIOFlatlist';
 
 export {
   IntersectionObserver,
